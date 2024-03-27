@@ -1,5 +1,6 @@
 package de.carstenkremser.neuefische;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -27,5 +28,11 @@ public class Main {
         System.out.println("Der Unterschied in Minuten  zwischen jetzt und " + randomDate + " ist: " + ChronoUnit.MINUTES.between(currentZonedDateTime, randomDate));
         System.out.println("Der Unterschied in Sekunden zwischen jetzt und " + randomDate + " ist: " + ChronoUnit.SECONDS.between(currentZonedDateTime, randomDate));
 
+
+        Animal cat1 = new Animal(LocalDate.of(2017,3,12),"Mauzi");
+        Animal dog1 = new Animal(LocalDate.of(2019,10,23),"Woof");
+
+        System.out.println("Der nächste Geburtstag von " + cat1.name + " ist in " + cat1.daysUntilNextBirthday() + " Tagen");
+        System.out.println("Der nächste Geburtstag von " + dog1.name + " ist in " + dog1.daysUntilNextBirthday() + " Tagen");
     }
 }
